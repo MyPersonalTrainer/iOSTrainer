@@ -9,8 +9,11 @@
 #import "MainViewController.h"
 #import "SCInterface.h"
 #import <AFNetworking/AFNetworking.h>
+#import "Exercise.h"
 
 @interface MainViewController ()
+
+@property (strong, nonatomic) NSMutableArray *programs;
 
 @end
 
@@ -19,29 +22,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+    self.myTableView.delegate = self;
+    self.myTableView.dataSource = self;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
     NSDictionary *parameters = @{
                                  @"program" : @{
-                                         @"training_place" : @"1", //1 - Gym, 2 - Home
-                                         @"training_type" : @"1" //1 - Strenght, 2 - Mass, 3 - Relief
+                                         @"training_place" : @1, //1 - Gym, 2 - Home
+                                         @"training_type" : @2 //1 - Strenght, 2 - Mass, 3 - Relief
                                          }
                                  };
     [manager POST:@"https://personal-trainer-app.herokuapp.com/programs" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+//        NSLog(@"JSON: %@", responseObject);
+        self.programs = [responseObject valueForKeyPath:@"training_days.exercises"];
+        [self.myTableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
 //    if([[self.feedDictionary allKeys] count] == 0) {
 //        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -57,9 +62,23 @@
 //    }
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.programs ? 1 : 0;
+}
 
-- (IBAction)showSideMenu:(id)sender {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.programs ? self.programs.count : 0;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+//    Exercise *exercise = [[Exercise alloc] initWithDictionary:self.programs[0][indexPath.row]];
+    
+    cell.textLabel.text = exercise.eName;
+    
+    return cell;
 }
 
 @end

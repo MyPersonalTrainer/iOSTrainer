@@ -13,6 +13,7 @@
 		BF52DBAA1BF52BF90033DC56 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF52DBA91BF52BF90033DC56 /* FeedViewController.m */; };
 		BF6BF59B1BF9D3EA00377163 /* ExerciseDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6BF59A1BF9D3EA00377163 /* ExerciseDetailTVC.m */; };
 		BF6BF59F1BF9D42500377163 /* ExerciseDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6BF59E1BF9D42500377163 /* ExerciseDetailCell.m */; };
+		BF6D052A1C0E327B00ED8598 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D05291C0E327B00ED8598 /* MainTableViewCell.m */; };
 		BF7050181C02429B006B50BA /* Parameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7050171C02429B006B50BA /* Parameters.storyboard */; };
 		BF70501D1C024563006B50BA /* AgeWeightGenderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF70501C1C024563006B50BA /* AgeWeightGenderVC.m */; };
 		BFAF15551C03BF5400587CA7 /* TrainingTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAF15541C03BF5400587CA7 /* TrainingTypeVC.m */; };
@@ -60,6 +61,8 @@
 		BF6BF59A1BF9D3EA00377163 /* ExerciseDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseDetailTVC.m; sourceTree = "<group>"; };
 		BF6BF59D1BF9D42500377163 /* ExerciseDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseDetailCell.h; sourceTree = "<group>"; };
 		BF6BF59E1BF9D42500377163 /* ExerciseDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseDetailCell.m; sourceTree = "<group>"; };
+		BF6D05281C0E327B00ED8598 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		BF6D05291C0E327B00ED8598 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		BF7050171C02429B006B50BA /* Parameters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Parameters.storyboard; sourceTree = "<group>"; };
 		BF70501B1C024563006B50BA /* AgeWeightGenderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgeWeightGenderVC.h; sourceTree = "<group>"; };
 		BF70501C1C024563006B50BA /* AgeWeightGenderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgeWeightGenderVC.m; sourceTree = "<group>"; };
@@ -167,6 +170,15 @@
 				BF6BF59E1BF9D42500377163 /* ExerciseDetailCell.m */,
 			);
 			name = ExerciseDetailCell;
+			sourceTree = "<group>";
+		};
+		BF6D05271C0E325F00ED8598 /* MainCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF6D05281C0E327B00ED8598 /* MainTableViewCell.h */,
+				BF6D05291C0E327B00ED8598 /* MainTableViewCell.m */,
+			);
+			name = MainCell;
 			sourceTree = "<group>";
 		};
 		BF7050191C0244D9006B50BA /* InitialSteps */ = {
@@ -321,6 +333,7 @@
 		BFD1E93F1BF4AE8300E72F87 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BF6D05271C0E325F00ED8598 /* MainCell */,
 				BFD1E90A1BF4AD2A00E72F87 /* MainViewController.h */,
 				BFD1E90B1BF4AD2A00E72F87 /* MainViewController.m */,
 			);
@@ -529,6 +542,7 @@
 			files = (
 				BFD1E90C1BF4AD2A00E72F87 /* MainViewController.m in Sources */,
 				BF0775821BF7A0E40023752A /* ExcersiseTableVC.m in Sources */,
+				BF6D052A1C0E327B00ED8598 /* MainTableViewCell.m in Sources */,
 				BFD1E93B1BF4AD6C00E72F87 /* Exercise.m in Sources */,
 				BF52DBAA1BF52BF90033DC56 /* FeedViewController.m in Sources */,
 				BFD1E9091BF4AD2A00E72F87 /* AppDelegate.m in Sources */,

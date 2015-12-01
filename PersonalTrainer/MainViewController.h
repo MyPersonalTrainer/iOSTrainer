@@ -11,6 +11,7 @@
 @interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary *feedDictionary;
+@property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 @end
 

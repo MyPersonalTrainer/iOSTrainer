@@ -348,8 +348,37 @@
                     <view key="view" contentMode="scaleToFill" id="Bhw-BC-sRW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZh-4l-EPe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="94" id="cq7-Gg-rcM" customClass="MainTableViewCell">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="94"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cq7-Gg-rcM" id="DuE-3G-L6E">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pDi-Yy-VPf" id="1fZ-6n-gXW"/>
+                                    <outlet property="delegate" destination="pDi-Yy-VPf" id="1h6-jN-z1q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aZh-4l-EPe" firstAttribute="top" secondItem="lQB-wY-kHr" secondAttribute="bottom" id="3ys-vH-hE9"/>
+                            <constraint firstItem="PKH-OO-gE8" firstAttribute="top" secondItem="aZh-4l-EPe" secondAttribute="bottom" id="KrI-t3-jvn"/>
+                            <constraint firstItem="aZh-4l-EPe" firstAttribute="leading" secondItem="Bhw-BC-sRW" secondAttribute="leading" id="caD-Vj-KTV"/>
+                            <constraint firstAttribute="trailing" secondItem="aZh-4l-EPe" secondAttribute="trailing" id="kPl-D6-LcE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule" id="SLi-dX-3t4">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="ZB4-w6-Bqu">
@@ -366,6 +395,9 @@
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="myTableView" destination="aZh-4l-EPe" id="fQN-Ua-hfk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oJ-cf-x6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

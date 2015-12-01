@@ -17,7 +17,7 @@
     _eName = [dictionary valueForKey:@"name"];
 //    _eMuscleGroup = [dictionary valueForKey:@"muscle_group"];
     NSArray *array = [[NSArray alloc] init];
-    array = [[dictionary objectForKey:@"exercise_descriptions"] valueForKey:@"step"];
+    array = [dictionary valueForKeyPath:@"exercise_descriptions.step"];
     _eDescription = [array componentsJoinedByString:@"\n"];
     NSLog(@"DESCR: %@", _eDescription);
     return self;
