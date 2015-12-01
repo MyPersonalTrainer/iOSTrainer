@@ -4,3 +4,4 @@
 # use_frameworks!
 
 pod 'MFSideMenu'
+pod "AFNetworking"

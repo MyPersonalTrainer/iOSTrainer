@@ -27,7 +27,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [SCInterface getJSONDataFromUrl];
+//    [SCInterface getJSONDataFromUrl];
     
     self.avatarImageView.image = [UIImage imageNamed:@"avatar_image"];
     self.avatarImageView.layer.cornerRadius = 64.0;
@@ -49,27 +49,20 @@
             controllerName = @"ExcersiseTableVC";
             break;
         default:
+            controllerName = nil;
             break;
     }
     
-    MainViewController *demoViewController = [self.storyboard instantiateViewControllerWithIdentifier:controllerName];
+    if(controllerName != nil) {
+        MainViewController *demoViewController = [self.storyboard instantiateViewControllerWithIdentifier:controllerName];
     
-    UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
-    NSArray *controllers = [NSArray arrayWithObject:demoViewController];
-    navigationController.viewControllers = controllers;
-    [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+        UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
+        NSArray *controllers = [NSArray arrayWithObject:demoViewController];
+        navigationController.viewControllers = controllers;
+    }
+        [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
 }
 
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
 /*
 // Override to support conditional editing of the table view.

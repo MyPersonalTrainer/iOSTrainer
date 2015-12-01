@@ -18,13 +18,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
-    UIViewController *leftSideMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"SideMenuTableViewController"];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackOpaque];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:18.0/255.0 green:166.0/255.0 blue:42.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
-    [container setLeftMenuViewController:leftSideMenuViewController];
-    [container setCenterViewController:navigationController];
+    [[UIToolbar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIToolbar appearance] setBackgroundColor:[UIColor colorWithRed:18.0/255.0 green:166.0/255.0 blue:42.0/255.0 alpha:1.0]];
+    
+    
+    [[UIPickerView appearance] setBackgroundColor:[UIColor whiteColor]];
+//    [[UIPickerView appearance] setTintColor:[UIColor colorWithRed:18.0/255.0 green:166.0/255.0 blue:42.0/255.0 alpha:1.0]];
+
+
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"TermsAccepted"]){
+        NSLog(@"Start as normal!");
+    }
+    else{
+        NSLog(@"Start as first time!");
+        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Parameters" bundle:nil];
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"Parameters"];
+        self.window.rootViewController = viewController;
+        [self.window makeKeyAndVisible];
+    }
     
     return YES;
 }

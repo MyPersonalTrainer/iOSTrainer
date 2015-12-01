@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		A739FDB6C11AD73A09F2355B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FEFDB0BE02AE9F8BE10E01 /* libPods.a */; };
 		BF0775821BF7A0E40023752A /* ExcersiseTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0775811BF7A0E40023752A /* ExcersiseTableVC.m */; };
-		BF3159971BF7540F00EE330F /* ExerciseVIewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3159961BF7540F00EE330F /* ExerciseVIewControllerViewController.m */; };
 		BF31599B1BF7654900EE330F /* SCInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = BF31599A1BF7654900EE330F /* SCInterface.m */; };
 		BF52DBAA1BF52BF90033DC56 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF52DBA91BF52BF90033DC56 /* FeedViewController.m */; };
 		BF6BF59B1BF9D3EA00377163 /* ExerciseDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6BF59A1BF9D3EA00377163 /* ExerciseDetailTVC.m */; };
 		BF6BF59F1BF9D42500377163 /* ExerciseDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6BF59E1BF9D42500377163 /* ExerciseDetailCell.m */; };
+		BF7050181C02429B006B50BA /* Parameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7050171C02429B006B50BA /* Parameters.storyboard */; };
+		BF70501D1C024563006B50BA /* AgeWeightGenderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF70501C1C024563006B50BA /* AgeWeightGenderVC.m */; };
+		BFAF15551C03BF5400587CA7 /* TrainingTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAF15541C03BF5400587CA7 /* TrainingTypeVC.m */; };
+		BFB982921BFD12D700ABC8E5 /* ExerciseDescriptionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB982911BFD12D700ABC8E5 /* ExerciseDescriptionVC.m */; };
 		BFD1E9061BF4AD2A00E72F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E9051BF4AD2A00E72F87 /* main.m */; };
 		BFD1E9091BF4AD2A00E72F87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E9081BF4AD2A00E72F87 /* AppDelegate.m */; };
 		BFD1E90C1BF4AD2A00E72F87 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E90B1BF4AD2A00E72F87 /* MainViewController.m */; };
@@ -49,8 +52,6 @@
 		9EB73A385B8316EC43872B13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BF0775801BF7A0E40023752A /* ExcersiseTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExcersiseTableVC.h; sourceTree = "<group>"; };
 		BF0775811BF7A0E40023752A /* ExcersiseTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExcersiseTableVC.m; sourceTree = "<group>"; };
-		BF3159951BF7540F00EE330F /* ExerciseVIewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseVIewControllerViewController.h; sourceTree = "<group>"; };
-		BF3159961BF7540F00EE330F /* ExerciseVIewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseVIewControllerViewController.m; sourceTree = "<group>"; };
 		BF3159991BF7654900EE330F /* SCInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCInterface.h; sourceTree = "<group>"; };
 		BF31599A1BF7654900EE330F /* SCInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCInterface.m; sourceTree = "<group>"; };
 		BF52DBA81BF52BF90033DC56 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -59,6 +60,13 @@
 		BF6BF59A1BF9D3EA00377163 /* ExerciseDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseDetailTVC.m; sourceTree = "<group>"; };
 		BF6BF59D1BF9D42500377163 /* ExerciseDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseDetailCell.h; sourceTree = "<group>"; };
 		BF6BF59E1BF9D42500377163 /* ExerciseDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseDetailCell.m; sourceTree = "<group>"; };
+		BF7050171C02429B006B50BA /* Parameters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Parameters.storyboard; sourceTree = "<group>"; };
+		BF70501B1C024563006B50BA /* AgeWeightGenderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgeWeightGenderVC.h; sourceTree = "<group>"; };
+		BF70501C1C024563006B50BA /* AgeWeightGenderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgeWeightGenderVC.m; sourceTree = "<group>"; };
+		BFAF15531C03BF5400587CA7 /* TrainingTypeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTypeVC.h; sourceTree = "<group>"; };
+		BFAF15541C03BF5400587CA7 /* TrainingTypeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTypeVC.m; sourceTree = "<group>"; };
+		BFB982901BFD12D700ABC8E5 /* ExerciseDescriptionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseDescriptionVC.h; sourceTree = "<group>"; };
+		BFB982911BFD12D700ABC8E5 /* ExerciseDescriptionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseDescriptionVC.m; sourceTree = "<group>"; };
 		BFD1E9011BF4AD2A00E72F87 /* PersonalTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD1E9051BF4AD2A00E72F87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BFD1E9071BF4AD2A00E72F87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,15 +132,6 @@
 			name = ExerciseTVC;
 			sourceTree = "<group>";
 		};
-		BF3159941BF753D500EE330F /* ExerciseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BF3159951BF7540F00EE330F /* ExerciseVIewControllerViewController.h */,
-				BF3159961BF7540F00EE330F /* ExerciseVIewControllerViewController.m */,
-			);
-			name = ExerciseViewController;
-			sourceTree = "<group>";
-		};
 		BF3159981BF7650100EE330F /* ServerCommunicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +169,42 @@
 			name = ExerciseDetailCell;
 			sourceTree = "<group>";
 		};
+		BF7050191C0244D9006B50BA /* InitialSteps */ = {
+			isa = PBXGroup;
+			children = (
+				BF70501A1C024530006B50BA /* AgeWeightGender */,
+				BFAF15521C03BF3000587CA7 /* TrainingTypeVC */,
+			);
+			name = InitialSteps;
+			sourceTree = "<group>";
+		};
+		BF70501A1C024530006B50BA /* AgeWeightGender */ = {
+			isa = PBXGroup;
+			children = (
+				BF70501B1C024563006B50BA /* AgeWeightGenderVC.h */,
+				BF70501C1C024563006B50BA /* AgeWeightGenderVC.m */,
+			);
+			name = AgeWeightGender;
+			sourceTree = "<group>";
+		};
+		BFAF15521C03BF3000587CA7 /* TrainingTypeVC */ = {
+			isa = PBXGroup;
+			children = (
+				BFAF15531C03BF5400587CA7 /* TrainingTypeVC.h */,
+				BFAF15541C03BF5400587CA7 /* TrainingTypeVC.m */,
+			);
+			name = TrainingTypeVC;
+			sourceTree = "<group>";
+		};
+		BFB9828F1BFD127900ABC8E5 /* ExerciseDescriptionVC */ = {
+			isa = PBXGroup;
+			children = (
+				BFB982901BFD12D700ABC8E5 /* ExerciseDescriptionVC.h */,
+				BFB982911BFD12D700ABC8E5 /* ExerciseDescriptionVC.m */,
+			);
+			name = ExerciseDescriptionVC;
+			sourceTree = "<group>";
+		};
 		BFD1E8F81BF4AD2A00E72F87 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +232,7 @@
 			children = (
 				BFD1E9071BF4AD2A00E72F87 /* AppDelegate.h */,
 				BFD1E9081BF4AD2A00E72F87 /* AppDelegate.m */,
+				BF3159981BF7650100EE330F /* ServerCommunicator */,
 				BFD1E9371BF4AD3400E72F87 /* Models */,
 				BFD1E93D1BF4ADD300E72F87 /* ViewControllers */,
 				BFD1E93E1BF4ADF300E72F87 /* Storyboards */,
@@ -237,7 +273,6 @@
 		BFD1E9371BF4AD3400E72F87 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BF3159981BF7650100EE330F /* ServerCommunicator */,
 				BFD1E9381BF4AD3900E72F87 /* EsxerciseModel */,
 			);
 			name = Models;
@@ -263,12 +298,13 @@
 		BFD1E93D1BF4ADD300E72F87 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFB9828F1BFD127900ABC8E5 /* ExerciseDescriptionVC */,
 				BF6BF5981BF9D3B700377163 /* ExerciseDetailTVC */,
 				BF07757F1BF7A0B60023752A /* ExerciseTVC */,
-				BF3159941BF753D500EE330F /* ExerciseViewController */,
 				BF52DBA71BF52BE10033DC56 /* FeedViewController */,
 				BFD1E93F1BF4AE8300E72F87 /* MainViewController */,
 				BFD1E9401BF4AE9000E72F87 /* SideMenuViewController */,
+				BF7050191C0244D9006B50BA /* InitialSteps */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -277,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				BFD1E90D1BF4AD2A00E72F87 /* Main.storyboard */,
+				BF7050171C02429B006B50BA /* Parameters.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -414,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7050181C02429B006B50BA /* Parameters.storyboard in Resources */,
 				BFD1E9141BF4AD2A00E72F87 /* LaunchScreen.storyboard in Resources */,
 				BFD1E9111BF4AD2A00E72F87 /* Assets.xcassets in Resources */,
 				BFD1E90F1BF4AD2A00E72F87 /* Main.storyboard in Resources */,
@@ -493,12 +531,14 @@
 				BF0775821BF7A0E40023752A /* ExcersiseTableVC.m in Sources */,
 				BFD1E93B1BF4AD6C00E72F87 /* Exercise.m in Sources */,
 				BF52DBAA1BF52BF90033DC56 /* FeedViewController.m in Sources */,
-				BF3159971BF7540F00EE330F /* ExerciseVIewControllerViewController.m in Sources */,
 				BFD1E9091BF4AD2A00E72F87 /* AppDelegate.m in Sources */,
 				BFD1E9061BF4AD2A00E72F87 /* main.m in Sources */,
 				BFD1E9431BF4B18B00E72F87 /* SideMenuTableViewController.m in Sources */,
 				BF6BF59B1BF9D3EA00377163 /* ExerciseDetailTVC.m in Sources */,
 				BF6BF59F1BF9D42500377163 /* ExerciseDetailCell.m in Sources */,
+				BF70501D1C024563006B50BA /* AgeWeightGenderVC.m in Sources */,
+				BFAF15551C03BF5400587CA7 /* TrainingTypeVC.m in Sources */,
+				BFB982921BFD12D700ABC8E5 /* ExerciseDescriptionVC.m in Sources */,
 				BF31599B1BF7654900EE330F /* SCInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

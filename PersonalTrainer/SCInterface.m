@@ -34,36 +34,46 @@
     return userDict;
 }
 
+
+
 + (void)getJSONDataFromUrl
 {
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask =
-    [session dataTaskWithURL:[NSURL URLWithString:@"https://personal-trainer-app.herokuapp.com"]
-           completionHandler:^(NSData *data,
-                               NSURLResponse *response,
-                               NSError *error) {
-               if (!error) {
-                   NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
-                   if (httpResp.statusCode == 200) {
-                       
-                       NSError *jsonError;
-                    
-                       NSDictionary *cleanJSON =
-                       [NSJSONSerialization JSONObjectWithData:data
-                                                       options:NSJSONReadingAllowFragments
-                                                         error:&jsonError];
-                       NSLog(@"%@", cleanJSON);
-                       
-                       [SCInterface archive:cleanJSON withKey:kExerciseResponseObject];
-                       
-                       
-                       if (!jsonError) {                    
-                           // Handle error
-                       }
-                   }
-               }
-           }];
-    [dataTask resume];
+    NSString *dataUrl = @"YOUR_DATA_URL";
+    NSURL *url = [NSURL URLWithString:dataUrl];
+    NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
+                                          dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                              // 4: Handle response here
+                                          }];
+    [downloadTask resume];
+}
+
+- (void) post {
+    
+    // 1
+    NSURL *url = [NSURL URLWithString:@"YOUR_WEBSERVICE_URL"];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    // 2
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"POST";
+    
+    // 3
+    NSDictionary *dictionary = @{@"key1": @"value1"};
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+    
+    if (!error) {
+        // 4
+        NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request
+                                                                   fromData:data completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
+                                                                       // Handle response here
+                                                                   }];
+        
+        // 5
+        [uploadTask resume];
+    }
 }
 
 @end

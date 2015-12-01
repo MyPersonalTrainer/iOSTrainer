@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController <UISplitViewControllerDelegate>
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) NSMutableDictionary *feedDictionary;
 
 @end
 

@@ -10,6 +10,7 @@
 #import "MFSideMenu.h"
 #import "Exercise.h"
 #import "ExerciseDetailCell.h"
+#import "ExerciseDescriptionVC.h"
 
 @interface ExerciseDetailTVC ()
 
@@ -34,18 +35,6 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    self.exerciseArray = [[NSMutableArray alloc] init];
-    self.exerciseArray = [ud objectForKey:kExerciseByMuscleGroup];
-    
-    self.items = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *dict in self.exerciseArray) {
-        Exercise *exercise = [[Exercise alloc] initWithDictionary:dict];
-        [self.items addObject:exercise];
-    }
-    
-    [self.myTableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -69,17 +58,27 @@
     return cell;
 }
 
-- (IBAction)callSideMenu:(id)sender {
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+- (void)setExerciseArray:(NSMutableArray *)exerciseArray {
+    _exerciseArray = exerciseArray;
     
     self.items = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *dict in _exerciseArray) {
+    for (NSDictionary *dict in self.exerciseArray) {
         Exercise *exercise = [[Exercise alloc] initWithDictionary:dict];
         [self.items addObject:exercise];
     }
     
     [self.myTableView reloadData];
+}
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ExerciseDescriptionVC *edvc = [segue destinationViewController];
+    Exercise *exercise = (Exercise *)[self.items objectAtIndex:[self.myTableView indexPathForSelectedRow].row];
+    edvc.myExercise = exercise;
+    edvc.eDescription = exercise.eDescription;
 }
 
 @end
