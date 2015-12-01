@@ -13,8 +13,6 @@
 
 @interface ExcersiseTableVC ()
 
-@property (strong, nonatomic) NSCountedSet *exercisesSet;
-
 @end
 
 @implementation ExcersiseTableVC
@@ -31,7 +29,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     if([ud objectForKey:@"exerciseDictionary"] == nil) {
         if([[self.exerciseDictionary allKeys] count] == 0) {

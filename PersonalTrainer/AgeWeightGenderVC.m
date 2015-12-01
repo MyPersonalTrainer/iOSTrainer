@@ -7,6 +7,7 @@
 //
 
 #import "AgeWeightGenderVC.h"
+#import "Constants.h"
 
 @interface AgeWeightGenderVC ()
 
@@ -123,6 +124,13 @@
     return cellHeight;
 }
 - (IBAction)nextButtonClicked:(id)sender {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    [ud setObject:self.ageTextField.text forKey:kUserAge];
+    [ud setObject:self.weightTextField.text forKey:kUserWeight];
+    [ud setObject:self.genderTextField.text forKey:kUserGender];
+    [ud setObject:self.heightTextField.text forKey:kUserHeight];
+    [ud synchronize];
 }
 
 /*

@@ -10,4 +10,8 @@
 
 @interface MainTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *dayOfWeekLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeNeededLabel;
+@property (weak, nonatomic) IBOutlet UILabel *trainingType;
+
 @end

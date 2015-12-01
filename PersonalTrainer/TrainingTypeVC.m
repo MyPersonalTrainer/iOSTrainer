@@ -7,6 +7,7 @@
 //
 
 #import "TrainingTypeVC.h"
+#import "Constants.h"
 
 @interface TrainingTypeVC ()
 
@@ -56,7 +57,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.activeField = textField;
     if([textField isEqual:self.typeTextField]) {
-        self.data = [NSMutableArray arrayWithObjects:@"Серце", @"Сила", @"Витривалість", nil];
+        self.data = [NSMutableArray arrayWithObjects:@"Сила", @"Маса", @"Рель'єф", nil];
     }
     if([textField isEqual:self.placeTextField]) {
         self.data = [NSMutableArray arrayWithObjects:@"Домівка", @"Зал", nil];
@@ -97,7 +98,12 @@
 }
 
 - (IBAction)nextButtonClicked:(id)sender {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
+    [ud setObject:[NSNumber numberWithBool:YES] forKey:kTermsAccepted];
+    [ud setObject:self.typeTextField.text forKey:kUserTrainingType];
+    [ud setObject:self.placeTextField.text forKey:kUserPlace];
+    [ud synchronize];
 }
 
 @end

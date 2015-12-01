@@ -10,6 +10,10 @@
 #import "SCInterface.h"
 #import <AFNetworking/AFNetworking.h>
 #import "Exercise.h"
+#import "Program.h"
+#import "MainTableViewCell.h"
+#import "Constants.h"
+#import "ExerciseDetailTVC.h"
 
 @interface MainViewController ()
 
@@ -37,8 +41,9 @@
                                          }
                                  };
     [manager POST:@"https://personal-trainer-app.herokuapp.com/programs" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"JSON: %@", responseObject);
-        self.programs = [responseObject valueForKeyPath:@"training_days.exercises"];
+        //        NSLog(@"JSON: %@", responseObject);
+        //        self.programs = [responseObject valueForKeyPath:@"training_days.exercises"];
+        self.programs = [responseObject valueForKeyPath:@"training_days"];
         [self.myTableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -48,18 +53,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-//    if([[self.feedDictionary allKeys] count] == 0) {
-//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//        [manager GET:@"https://personal-trainer-app.herokuapp.com/programs" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSLog(@"JSON: %@", responseObject);
-//            self.feedDictionary = responseObject;
-//            //            [self.myTableView reloadData];
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            NSLog(@"Error: %@", error);
-//        }];
-//    } else {
-//        
-//    }
+    //    if([[self.feedDictionary allKeys] count] == 0) {
+    //        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //        [manager GET:@"https://personal-trainer-app.herokuapp.com/programs" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    //            NSLog(@"JSON: %@", responseObject);
+    //            self.feedDictionary = responseObject;
+    //            //            [self.myTableView reloadData];
+    //        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    //            NSLog(@"Error: %@", error);
+    //        }];
+    //    } else {
+    //
+    //    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -72,13 +77,28 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MainTableViewCell *cell = (MainTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-//    Exercise *exercise = [[Exercise alloc] initWithDictionary:self.programs[0][indexPath.row]];
+    NSDictionary *dict = [self.programs objectAtIndex:indexPath.row];
+    Program *program = [[Program alloc] initWithDictionary:[dict valueForKeyPath:@"exercises"]];
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
-    cell.textLabel.text = exercise.eName;
+    cell.dayOfWeekLabel.text = program.dayOfWeek;
+    cell.trainingType.text = [ud valueForKey:kUserTrainingType];
+    cell.timeNeededLabel.text = program.timeNeeded;
+    
+    //    Exercise *exercise = [[Exercise alloc] initWithDictionary:self.programs[0][indexPath.row]];
+    //    cell.textLabel.text = exercise.eName;
     
     return cell;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"showProgramExercises"]) {
+        ExerciseDetailTVC *edtvc = [segue destinationViewController];
+        edtvc.exerciseArray = [[self.programs valueForKeyPath:@"exercises"] objectAtIndex:[self.myTableView indexPathForSelectedRow].row];
+    }
+}
+
 
 @end

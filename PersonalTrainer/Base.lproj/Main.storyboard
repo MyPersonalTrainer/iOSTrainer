@@ -349,20 +349,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZh-4l-EPe">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZh-4l-EPe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="94" id="cq7-Gg-rcM" customClass="MainTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="94"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="67" id="cq7-Gg-rcM" customClass="MainTableViewCell">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cq7-Gg-rcM" id="DuE-3G-L6E">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DayOfWeek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKj-k5-uCC">
+                                                    <rect key="frame" x="8" y="8" width="91" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeNeeded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsb-Nb-vc2">
+                                                    <rect key="frame" x="213" y="8" width="99" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFv-QU-cbt">
+                                                    <rect key="frame" x="312" y="35" width="0.0" height="0.0"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrainingType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUE-y7-WvX">
+                                                    <rect key="frame" x="8" y="37" width="99" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Tsb-Nb-vc2" secondAttribute="trailing" constant="8" id="Jj0-Fb-vQG"/>
+                                                <constraint firstItem="YKj-k5-uCC" firstAttribute="top" secondItem="DuE-3G-L6E" secondAttribute="top" constant="8" id="UW8-Mi-ajV"/>
+                                                <constraint firstItem="YKj-k5-uCC" firstAttribute="leading" secondItem="DuE-3G-L6E" secondAttribute="leading" constant="8" id="UdL-Ez-gRa"/>
+                                                <constraint firstAttribute="bottom" secondItem="LUE-y7-WvX" secondAttribute="bottom" constant="8" id="iUs-4a-Ia8"/>
+                                                <constraint firstItem="Tsb-Nb-vc2" firstAttribute="top" secondItem="DuE-3G-L6E" secondAttribute="top" constant="8" id="lYo-uS-cp1"/>
+                                                <constraint firstItem="LUE-y7-WvX" firstAttribute="top" secondItem="YKj-k5-uCC" secondAttribute="bottom" constant="8" id="n4X-Tk-DyK"/>
+                                                <constraint firstItem="LUE-y7-WvX" firstAttribute="leading" secondItem="DuE-3G-L6E" secondAttribute="leading" constant="8" id="pTa-Gr-hNu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="dayOfWeekLabel" destination="YKj-k5-uCC" id="JU0-gG-UWZ"/>
+                                            <outlet property="timeNeededLabel" destination="Tsb-Nb-vc2" id="FfP-Rg-tul"/>
+                                            <outlet property="trainingType" destination="LUE-y7-WvX" id="pZb-KY-shj"/>
+                                            <segue destination="kxj-bu-Hhd" kind="show" identifier="showProgramExercises" id="g2M-CJ-VxD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -374,8 +419,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aZh-4l-EPe" firstAttribute="top" secondItem="lQB-wY-kHr" secondAttribute="bottom" id="3ys-vH-hE9"/>
-                            <constraint firstItem="PKH-OO-gE8" firstAttribute="top" secondItem="aZh-4l-EPe" secondAttribute="bottom" id="KrI-t3-jvn"/>
+                            <constraint firstItem="aZh-4l-EPe" firstAttribute="top" secondItem="Bhw-BC-sRW" secondAttribute="top" id="1rR-eZ-Qun"/>
+                            <constraint firstItem="PKH-OO-gE8" firstAttribute="top" secondItem="aZh-4l-EPe" secondAttribute="bottom" id="Et2-9z-QPK"/>
                             <constraint firstItem="aZh-4l-EPe" firstAttribute="leading" secondItem="Bhw-BC-sRW" secondAttribute="leading" id="caD-Vj-KTV"/>
                             <constraint firstAttribute="trailing" secondItem="aZh-4l-EPe" secondAttribute="trailing" id="kPl-D6-LcE"/>
                         </constraints>
@@ -468,4 +513,7 @@
             <point key="canvasLocation" x="-588" y="-1128"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="g2M-CJ-VxD"/>
+    </inferredMetricsTieBreakers>
 </document>

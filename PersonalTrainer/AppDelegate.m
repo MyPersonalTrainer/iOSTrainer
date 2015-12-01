@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MFSideMenuContainerViewController.h"
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -32,7 +33,7 @@
 //    [[UIPickerView appearance] setTintColor:[UIColor colorWithRed:18.0/255.0 green:166.0/255.0 blue:42.0/255.0 alpha:1.0]];
 
 
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"TermsAccepted"]){
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kTermsAccepted] == YES){
         NSLog(@"Start as normal!");
     }
     else{

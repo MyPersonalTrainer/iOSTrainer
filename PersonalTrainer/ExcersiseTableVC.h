@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) NSDictionary *exerciseDictionary;
 @property (strong, nonatomic) Exercise *exercise;
+@property (strong, nonatomic) NSCountedSet *exercisesSet;
 
 @end
