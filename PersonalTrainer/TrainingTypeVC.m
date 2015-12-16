@@ -51,7 +51,26 @@
     
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
+    self.myTableView.scrollEnabled = NO;
     
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    if([ud objectForKey:kUserTrainingType]) {
+        self.typeTextField.text = [ud objectForKey:kUserTrainingType];
+    }
+    if([ud objectForKey:kUserPlace]) {
+        self.placeTextField.text = [ud objectForKey:kUserPlace];
+    }
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -98,12 +117,29 @@
 }
 
 - (IBAction)nextButtonClicked:(id)sender {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
-    [ud setObject:[NSNumber numberWithBool:YES] forKey:kTermsAccepted];
-    [ud setObject:self.typeTextField.text forKey:kUserTrainingType];
-    [ud setObject:self.placeTextField.text forKey:kUserPlace];
-    [ud synchronize];
+    if([self.typeTextField.text isEqualToString:@""] ||
+       [self.placeTextField.text isEqualToString:@""])
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:@"You must set all fields before proceeding" preferredStyle:UIAlertControllerStyleActionSheet];
+        [self presentViewController:alert animated:YES completion:^{
+            double delayInSeconds = 0.48;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            });
+        }];
+    }
+    else
+    {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:[NSNumber numberWithBool:YES] forKey:kTermsAccepted];
+        [ud setObject:self.typeTextField.text forKey:kUserTrainingType];
+        [ud setObject:self.placeTextField.text forKey:kUserPlace];
+        [ud synchronize];
+        [self performSegueWithIdentifier:@"finishInitialSteps" sender:nil];
+    }
 }
 
 @end

@@ -16,6 +16,8 @@
 #define kUserPlace @"userPlace"
 #define kTermsAccepted @"TermsAccepted"
 
+#define BASE_URL @"https://personal-trainer-app.herokuapp.com"
+
 @interface Constants : NSObject
 
 @end

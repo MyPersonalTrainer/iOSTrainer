@@ -33,17 +33,23 @@
 //    [[UIPickerView appearance] setTintColor:[UIColor colorWithRed:18.0/255.0 green:166.0/255.0 blue:42.0/255.0 alpha:1.0]];
 
 
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kTermsAccepted] == YES){
-        NSLog(@"Start as normal!");
-    }
-    else{
-        NSLog(@"Start as first time!");
-        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Parameters" bundle:nil];
-        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"Parameters"];
-        self.window.rootViewController = viewController;
-        [self.window makeKeyAndVisible];
-    }
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:kTermsAccepted] == YES){
+//        NSLog(@"Start as normal!");
+//    }
+//    else{
+//        NSLog(@"Start as first time!");
+//        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+//        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginWIndow"];
+//        self.window.rootViewController = viewController;
+//        [self.window makeKeyAndVisible];
+//    }
+    
+            self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+            UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginWIndow"];
+            self.window.rootViewController = viewController;
+            [self.window makeKeyAndVisible];
     
     return YES;
 }

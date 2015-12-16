@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (strong, nonatomic) Exercise *myExercise;
 @property (strong, nonatomic) NSString *eDescription;
+@property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 
 @end

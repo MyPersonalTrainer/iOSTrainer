@@ -45,6 +45,7 @@
         //        self.programs = [responseObject valueForKeyPath:@"training_days.exercises"];
         self.programs = [responseObject valueForKeyPath:@"training_days"];
         [self.myTableView reloadData];
+        NSLog(@"Programs: %@", self.programs);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -62,7 +63,7 @@
     //        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     //            NSLog(@"Error: %@", error);
     //        }];
-    //    } else {
+    //    } else {q
     //
     //    }
 }

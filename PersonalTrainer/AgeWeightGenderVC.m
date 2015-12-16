@@ -64,6 +64,35 @@
     
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
+    self.myTableView.scrollEnabled = NO;
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    if([ud objectForKey:kUserAge]) {
+        self.ageTextField.text = [ud objectForKey:kUserAge];
+    }
+    if([ud objectForKey:kUserWeight]) {
+        self.weightTextField.text = [ud objectForKey:kUserWeight];
+    }
+    if([ud objectForKey:kUserGender]) {
+        self.genderTextField.text = [ud objectForKey:kUserGender];
+    }
+    if([ud objectForKey:kUserHeight]) {
+        self.heightTextField.text = [ud objectForKey:kUserHeight];
+    }
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
 
 }
 
@@ -124,13 +153,33 @@
     return cellHeight;
 }
 - (IBAction)nextButtonClicked:(id)sender {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
-    [ud setObject:self.ageTextField.text forKey:kUserAge];
-    [ud setObject:self.weightTextField.text forKey:kUserWeight];
-    [ud setObject:self.genderTextField.text forKey:kUserGender];
-    [ud setObject:self.heightTextField.text forKey:kUserHeight];
-    [ud synchronize];
+    if([self.ageTextField.text isEqualToString:@""] ||
+       [self.weightTextField.text isEqualToString:@""] ||
+       [self.genderTextField.text isEqualToString:@""] ||
+       [self.heightTextField.text isEqualToString:@""])
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:@"You must set all fields before proceeding" preferredStyle:UIAlertControllerStyleActionSheet];
+        [self presentViewController:alert animated:YES completion:^{
+            double delayInSeconds = 0.48;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            });
+        }];
+    }
+    else
+    {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:self.ageTextField.text forKey:kUserAge];
+        [ud setObject:self.weightTextField.text forKey:kUserWeight];
+        [ud setObject:self.genderTextField.text forKey:kUserGender];
+        [ud setObject:self.heightTextField.text forKey:kUserHeight];
+        [ud synchronize];
+        
+        [self performSegueWithIdentifier:@"trainingTypeSegue" sender:nil];
+    }
 }
 
 /*

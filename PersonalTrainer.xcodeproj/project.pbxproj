@@ -18,6 +18,8 @@
 		BF7050181C02429B006B50BA /* Parameters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7050171C02429B006B50BA /* Parameters.storyboard */; };
 		BF70501D1C024563006B50BA /* AgeWeightGenderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF70501C1C024563006B50BA /* AgeWeightGenderVC.m */; };
 		BFAF15551C03BF5400587CA7 /* TrainingTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAF15541C03BF5400587CA7 /* TrainingTypeVC.m */; };
+		BFB38B871C20AADE008B998E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB38B861C20AADE008B998E /* Login.storyboard */; };
+		BFB38B8B1C20B1E5008B998E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB38B8A1C20B1E5008B998E /* LoginVC.m */; };
 		BFB982921BFD12D700ABC8E5 /* ExerciseDescriptionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB982911BFD12D700ABC8E5 /* ExerciseDescriptionVC.m */; };
 		BFD1E9061BF4AD2A00E72F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E9051BF4AD2A00E72F87 /* main.m */; };
 		BFD1E9091BF4AD2A00E72F87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E9081BF4AD2A00E72F87 /* AppDelegate.m */; };
@@ -28,7 +30,6 @@
 		BFD1E91F1BF4AD2A00E72F87 /* PersonalTrainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E91E1BF4AD2A00E72F87 /* PersonalTrainerTests.m */; };
 		BFD1E92A1BF4AD2A00E72F87 /* PersonalTrainerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E9291BF4AD2A00E72F87 /* PersonalTrainerUITests.m */; };
 		BFD1E93B1BF4AD6C00E72F87 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E93A1BF4AD6C00E72F87 /* Exercise.m */; };
-		BFD1E9431BF4B18B00E72F87 /* SideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1E9421BF4B18B00E72F87 /* SideMenuTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,9 @@
 		BF70501C1C024563006B50BA /* AgeWeightGenderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgeWeightGenderVC.m; sourceTree = "<group>"; };
 		BFAF15531C03BF5400587CA7 /* TrainingTypeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTypeVC.h; sourceTree = "<group>"; };
 		BFAF15541C03BF5400587CA7 /* TrainingTypeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTypeVC.m; sourceTree = "<group>"; };
+		BFB38B861C20AADE008B998E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		BFB38B891C20B1E5008B998E /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		BFB38B8A1C20B1E5008B998E /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		BFB982901BFD12D700ABC8E5 /* ExerciseDescriptionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseDescriptionVC.h; sourceTree = "<group>"; };
 		BFB982911BFD12D700ABC8E5 /* ExerciseDescriptionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseDescriptionVC.m; sourceTree = "<group>"; };
 		BFD1E9011BF4AD2A00E72F87 /* PersonalTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,8 +95,6 @@
 		BFD1E92B1BF4AD2A00E72F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD1E9391BF4AD6C00E72F87 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
 		BFD1E93A1BF4AD6C00E72F87 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
-		BFD1E9411BF4B18B00E72F87 /* SideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuTableViewController.h; sourceTree = "<group>"; };
-		BFD1E9421BF4B18B00E72F87 /* SideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		BF7050191C0244D9006B50BA /* InitialSteps */ = {
 			isa = PBXGroup;
 			children = (
+				BFB38B881C20B1C4008B998E /* LoginVC */,
 				BF70501A1C024530006B50BA /* AgeWeightGender */,
 				BFAF15521C03BF3000587CA7 /* TrainingTypeVC */,
 			);
@@ -209,6 +212,15 @@
 				BFAF15541C03BF5400587CA7 /* TrainingTypeVC.m */,
 			);
 			name = TrainingTypeVC;
+			sourceTree = "<group>";
+		};
+		BFB38B881C20B1C4008B998E /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				BFB38B891C20B1E5008B998E /* LoginVC.h */,
+				BFB38B8A1C20B1E5008B998E /* LoginVC.m */,
+			);
+			name = LoginVC;
 			sourceTree = "<group>";
 		};
 		BFB9828F1BFD127900ABC8E5 /* ExerciseDescriptionVC */ = {
@@ -320,7 +332,6 @@
 				BF6BF5981BF9D3B700377163 /* ExerciseDetailTVC */,
 				BF07757F1BF7A0B60023752A /* ExerciseTVC */,
 				BFD1E93F1BF4AE8300E72F87 /* MainViewController */,
-				BFD1E9401BF4AE9000E72F87 /* SideMenuViewController */,
 				BF7050191C0244D9006B50BA /* InitialSteps */,
 			);
 			name = ViewControllers;
@@ -331,6 +342,7 @@
 			children = (
 				BFD1E90D1BF4AD2A00E72F87 /* Main.storyboard */,
 				BF7050171C02429B006B50BA /* Parameters.storyboard */,
+				BFB38B861C20AADE008B998E /* Login.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -343,15 +355,6 @@
 				BFD1E90B1BF4AD2A00E72F87 /* MainViewController.m */,
 			);
 			name = MainViewController;
-			sourceTree = "<group>";
-		};
-		BFD1E9401BF4AE9000E72F87 /* SideMenuViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BFD1E9411BF4B18B00E72F87 /* SideMenuTableViewController.h */,
-				BFD1E9421BF4B18B00E72F87 /* SideMenuTableViewController.m */,
-			);
-			name = SideMenuViewController;
 			sourceTree = "<group>";
 		};
 		FBE337494EA0258EF7812EE6 /* Pods */ = {
@@ -472,6 +475,7 @@
 				BF7050181C02429B006B50BA /* Parameters.storyboard in Resources */,
 				BFD1E9141BF4AD2A00E72F87 /* LaunchScreen.storyboard in Resources */,
 				BFD1E9111BF4AD2A00E72F87 /* Assets.xcassets in Resources */,
+				BFB38B871C20AADE008B998E /* Login.storyboard in Resources */,
 				BFD1E90F1BF4AD2A00E72F87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,13 +551,13 @@
 			files = (
 				BFD1E90C1BF4AD2A00E72F87 /* MainViewController.m in Sources */,
 				BF0775821BF7A0E40023752A /* ExcersiseTableVC.m in Sources */,
+				BFB38B8B1C20B1E5008B998E /* LoginVC.m in Sources */,
 				BF39DDD11C0E55D9003D1A3D /* Program.m in Sources */,
 				BF6D052A1C0E327B00ED8598 /* MainTableViewCell.m in Sources */,
 				BFD1E93B1BF4AD6C00E72F87 /* Exercise.m in Sources */,
 				BF39DDD41C0E5A34003D1A3D /* Constants.m in Sources */,
 				BFD1E9091BF4AD2A00E72F87 /* AppDelegate.m in Sources */,
 				BFD1E9061BF4AD2A00E72F87 /* main.m in Sources */,
-				BFD1E9431BF4B18B00E72F87 /* SideMenuTableViewController.m in Sources */,
 				BF6BF59B1BF9D3EA00377163 /* ExerciseDetailTVC.m in Sources */,
 				BF6BF59F1BF9D42500377163 /* ExerciseDetailCell.m in Sources */,
 				BF70501D1C024563006B50BA /* AgeWeightGenderVC.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "Exercise.h"
+#import "Constants.h"
 
 @implementation Exercise
 
@@ -20,6 +21,9 @@
     array = [dictionary valueForKeyPath:@"exercise_descriptions.step"];
     _eDescription = [array componentsJoinedByString:@"\n"];
     NSLog(@"DESCR: %@", _eDescription);
+    
+    _eImageUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_URL, [dictionary objectForKey:@"ex_image_url"]]];
+    
     return self;
 }
 

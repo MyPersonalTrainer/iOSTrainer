@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSString *eName;
 @property (strong, nonatomic) NSString *eDescription;
 @property (strong, nonatomic) NSString *eMuscleGroup;
+@property (strong, nonatomic) NSURL *eImageUrl;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
